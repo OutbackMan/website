@@ -1,0 +1,77 @@
+/*
+ * fileinfo, pixabay, tineye color extractor, adobe cc
+ */
+:root {
+  font-size: calc(0.5em + 1vw);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+	--IconSpeechBubble: &#x1f4ac; 
+	--IconBriefcase: &#x1f4bc; 
+	--IconHouse: &#x1f3e0;
+	--IconBust: &#x1f464; 
+	--IconEnvelope: &#x1f582; 
+	--IconCopyright: &#xa9; 
+	--IconTriangleDown: &#x25bc; 
+	--IconHamburgerLines: &#x2630; 
+	--IconCross: &#x2a2f; 
+}
+
+/* assume 1rem = 16x */
+
+.__RYANMCCLUE__ {
+	font-size: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+  	"ColLeft ColRight ColRight ColRight ColRight"
+}
+
+.ColLeft {
+	font-size: 1em;
+	grid-area: "ColLeft";
+	height: 100vh;
+	background-color: grey;
+}
+
+.ColLeft__Headshot {
+	font-size: 1em;	
+}
+
+.ColLeft__Headshot__Img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	border-radius: 50%;
+}
+
+.ColLeft__VertNav {
+	font-size: 1rem;
+}
+
+.ColLeft__VertNav__LinksList {
+	list-style-type: none;
+}
+
+.ColLeft__VertNav__LinkList__LinkItem {
+	margin: 2em 0;
+}
+
+.ColLeft__VertNav__LinksList__LinkItem__Link {
+	text-decoration: none;
+}
+
+.Link__Home::before {
+	content: attr(data-icon-house);
+}
+
+
+/*
+
+.RyanMcclue__RightCol {
+   font-size: 1rem;
+}
+*/
+
+
