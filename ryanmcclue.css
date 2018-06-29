@@ -20,22 +20,22 @@
 
 /* assume 1rem = 16x */
 
-.__RYANMCCLUE__ {
-	font-size: 1rem;
+.__RYAN_MCCLUE__ {
+  font-size: 1rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-areas:
   	"ColLeft ColRight ColRight ColRight ColRight"
 }
 
-.ColLeft {
+.ColLeft__ {
 	font-size: 1em;
 	grid-area: "ColLeft";
 	height: 100vh;
 	background-color: grey;
 }
 
-.ColLeft__Headshot {
+.ColLeft__Headshot__ {
 	font-size: 1em;	
 }
 
@@ -46,15 +46,17 @@
 	border-radius: 50%;
 }
 
-.ColLeft__VertNav {
-	font-size: 1rem;
+.ColLeft__VertNav__ {
+	font-size: 1em;
 }
 
-.ColLeft__VertNav__LinksList {
+.ColLeft__VertNav__LinksList__ {
+	font-size: 1em;
 	list-style-type: none;
 }
 
-.ColLeft__VertNav__LinkList__LinkItem {
+.ColLeft__VertNav__LinksList__LinkItem__ {
+	font-size: 1em;
 	margin: 2em 0;
 }
 
