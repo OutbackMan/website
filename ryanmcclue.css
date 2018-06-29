@@ -1,31 +1,27 @@
 /*
  * fileinfo, pixabay, tineye color extractor, adobe cc
  */
-:root {
-  font-size: calc(0.5em + 1vw);
+/* assume 1rem = 16x */
+html {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-
-	--IconSpeechBubble: &#x1f4ac; 
-	--IconBriefcase: &#x1f4bc; 
-	--IconHouse: &#x1f3e0;
-	--IconBust: &#x1f464; 
-	--IconEnvelope: &#x1f582; 
-	--IconCopyright: &#xa9; 
-	--IconTriangleDown: &#x25bc; 
-	--IconHamburgerLines: &#x2630; 
-	--IconCross: &#x2a2f; 
+  font-size: calc(0.5em + 1vw);
+  font-weight: normal;
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", 
+				Tahoma, Sans-Serif;
+  color: #272727;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
 }
 
-/* assume 1rem = 16x */
+body {
+	margin: 0;	
+}
 
 .__RYAN_MCCLUE__ {
   font-size: 1rem;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-areas:
-  	"ColLeft ColRight ColRight ColRight ColRight"
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas: 
+	"ColLeft ColRight"
 }
 
 .ColLeft__ {
@@ -44,10 +40,23 @@
 	margin: 0 auto;
 	max-width: 100%;
 	border-radius: 50%;
+	border: 0.2em solid black;
+}
+
+.ColLeft__Headshot__Caption__TwitterLink {
+	text-decoration: none;	
 }
 
 .ColLeft__VertNav__ {
 	font-size: 1em;
+}
+
+.ColLeft__VertNav__OpenCloseButton {
+	display: none;		
+	/* @media 
+
+
+	*/
 }
 
 .ColLeft__VertNav__LinksList__ {
@@ -61,19 +70,49 @@
 }
 
 .ColLeft__VertNav__LinksList__LinkItem__Link {
-	text-decoration: none;
+	text-decoration: none;	
 }
 
-.Link__Home::before {
-	content: attr(data-icon-house);
+.ColRight__ {
+	grid-area: "ColRight";
+	display: grid;
+	grid-template-rows: repeat(6, auto); 
+	grid-template-areas:
+		"ColRightRowHome"
+		"ColRightRowAbout"
+		"ColRightRowProjects"
+		"ColRightRowBlog"
+		"ColRightRowContact"
+		"ColRightRowFooter";
+	background-color: goldenrod;
+	height: 100vh;
 }
 
-
-/*
-
-.RyanMcclue__RightCol {
-   font-size: 1rem;
+.ColRight__Main__RowHome__ {
+	grid-area: "ColRightRowHome";	
 }
-*/
 
+.ColRight__Main__RowHome__HeroVideo {
+	height: 100vh;	
+	max-width: 100%;
+}
 
+.ColRight__Main__RowAbout__ {
+	grid-area: "ColRightRowAbout";	
+}
+
+.ColRight__Main__RowProjects__ {
+	grid-area: "ColRightRowProjects";	
+}
+
+.ColRight__Main__RowBlog__ {
+	grid-area: "ColRightRowBlog";	
+}
+
+.ColRight__Main__RowContact__ {
+	grid-area: "ColRightRowContact";	
+}
+
+.ColRight__RowFooter__ {
+	grid-area: "ColRightRowFooter";	
+}
