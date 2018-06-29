@@ -14,6 +14,7 @@ html {
 
 body {
 	margin: 0;	
+	padding: 0;
 }
 
 .__RYAN_MCCLUE__ {
@@ -29,6 +30,8 @@ body {
 	grid-area: "ColLeft";
 	height: 100vh;
 	background-color: grey;
+	top: 0;
+	position: sticky;
 }
 
 .ColLeft__Headshot__ {
@@ -51,12 +54,12 @@ body {
 	font-size: 1em;
 }
 
-.ColLeft__VertNav__OpenCloseButton {
+/* ACTUAL
 	display: none;		
-	/* @media 
+*/
 
-
-	*/
+.ColLeft__VertNav__OpenCloseButton {
+	border: none;
 }
 
 .ColLeft__VertNav__LinksList__ {
@@ -85,7 +88,7 @@ body {
 		"ColRightRowContact"
 		"ColRightRowFooter";
 	background-color: goldenrod;
-	height: 100vh;
+	height: 100%;
 }
 
 .ColRight__Main__RowHome__ {
