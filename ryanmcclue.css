@@ -1,8 +1,7 @@
 /*
  * fileinfo, pixabay, tineye color extractor, adobe cc
  */
-/* assume 1rem = 16x */
-html {
+:root {
   box-sizing: border-box;
   font-size: calc(0.5em + 1vw);
   font-weight: normal;
@@ -12,23 +11,20 @@ html {
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
 }
 
-body {
-	margin: 0;	
-	padding: 0;
-}
-
 .__RYAN_MCCLUE__ {
+  margin: 0;	
+  padding: 0;
   font-size: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-areas: 
-	"ColLeft ColRight"
+  display: flex;
 }
 
 .ColLeft__ {
 	font-size: 1em;
-	grid-area: "ColLeft";
-	height: 100vh;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	min-height: 100vh;
+	height: 100%;
 	background-color: grey;
 	top: 0;
 	position: sticky;
@@ -39,24 +35,34 @@ body {
 }
 
 .ColLeft__Headshot__Img {
-	display: block;
+	display: inline-block;
 	margin: 0 auto;
-	max-width: 100%;
+	width: 40%;
 	border-radius: 50%;
 	border: 0.2em solid black;
 }
 
+.ColLeft__Headshot__Caption__ {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	text-align: left;
+}
+
+.ColLeft__Headshot__Caption__Name {
+	text-decoration: none;	
+	text-align: left;
+	flex: 1 1 100%;
+}
+
 .ColLeft__Headshot__Caption__TwitterLink {
 	text-decoration: none;	
+	flex: 1 1 100%;
 }
 
 .ColLeft__VertNav__ {
 	font-size: 1em;
 }
-
-/* ACTUAL
-	display: none;		
-*/
 
 .ColLeft__VertNav__OpenCloseButton {
 	border: none;
@@ -65,28 +71,33 @@ body {
 .ColLeft__VertNav__LinksList__ {
 	font-size: 1em;
 	list-style-type: none;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
 }
 
 .ColLeft__VertNav__LinksList__LinkItem__ {
 	font-size: 1em;
-	margin: 2em 0;
+	margin: 1em 0;
+	flex: 1 1 100%;
+}
+
+/* icomoon --> inline svg */
+.ColLeft__VertNav__LinksList__LinkItem__:hover .ColLeft__VertNav__LinksList__LinkItem__Image {
+	fill: red;
 }
 
 .ColLeft__VertNav__LinksList__LinkItem__Link {
 	text-decoration: none;	
+	text-align: left;
+	width: 100%;
 }
 
+
+
+
 .ColRight__ {
-	grid-area: "ColRight";
-	display: grid;
-	grid-template-rows: repeat(6, auto); 
-	grid-template-areas:
-		"ColRightRowHome"
-		"ColRightRowAbout"
-		"ColRightRowProjects"
-		"ColRightRowBlog"
-		"ColRightRowContact"
-		"ColRightRowFooter";
+	margin-left: auto;
 	background-color: goldenrod;
 	height: 100%;
 }

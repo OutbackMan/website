@@ -40,10 +40,20 @@ function idb__version1to2_upgrade(idb) {
 		people_store_tx.createIndex("height-index", "height");
 		let height_index = people_store_tx.index("height-index");
 		// console.log(height_index.getAll());
-		height_index.openCursor();
+		// openCursor() can also be called on just an object store
+		height_index.openCursor().onsuccess = (event) => {
+				let cursor = event.target.result;
+				if (cursor) {
+						console.log(cursor.value.height);
+						cursor.continue();
+				} else {
+						console.log("no more entries");			
+				}
+		}
 	}
 }
 
+// only required if the entire site cannot be viewed offline
 function idb_create(idb_name, current_version) {
 	let idb_request = indexedDB.open(idb_name, current_version);
 
