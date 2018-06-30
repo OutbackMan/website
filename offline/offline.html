@@ -11,45 +11,7 @@
 
 <body>
 
-<script>
-  window.addEventListener('load', async (event) => {
-    const registration = await navigator.serviceWorker.register("/sw.js");			
-		// if loading from network already have latest version
-		if (!navigator.serviceWorker.controller) {
-				return;		
-		}
-		if (reg.waiting) {
-				// update is ready		
-				return;
-		}
-		// track progress
-		if (reg.installing) {
-				reg.installing.addEventListener("statechange", () => {
-						if (reg.installing.state === "installed") {
-								// update is ready		
-						}	
-				});
-		}
-		// listen for new installing workers
-		reg.addEventListener("updatefound", () => {
-				reg.installing.addEventListener("statechange", () => {
-						if (reg.installing.state === "installed") {
-								// update is ready		
-						}	
-				});
-		});
-
-  });
-
-  if (update_is_ready) {
-		worker.postMessage({action: "skipWaiting"});
-  }
-
-  navigator.serviceWorker.addEventListener("controllerchange", (event) => {
-		window.location.reload();	
-  });
-
-</script>
+<script src="idb.js"></script>
 </body>
 
 </html>

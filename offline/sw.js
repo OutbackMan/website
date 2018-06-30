@@ -2,7 +2,7 @@ const cache_name = "ryan-cache";
 
 self.addEventListener("install", async (event) => {
 		event.waitUntil(
-				const cache = await caches.open(cache_name);
+				let cache = await caches.open(cache_name);
 				cache.addAll([
 						"/skeleton.html",
 						"/style.css",
@@ -13,7 +13,7 @@ self.addEventListener("install", async (event) => {
 
 self.addEventListener("activate", async (event) => {
 		event.waitUntil(
-				const cache_names = await caches.keys();
+				let cache_names = await caches.keys();
 
 				cache_names.filter((cache_name) => {
 						return cache_name.startsWith("ryan") && cache_name !=== cache_name;
@@ -58,6 +58,52 @@ self.addEventListener("message", async (event) => {
 				return response; 
 		}
 */
+
+
+/*
+<script>
+  window.addEventListener('load', async (event) => {
+    const registration = await navigator.serviceWorker.register("/sw.js");			
+		// if loading from network already have latest version
+		if (!navigator.serviceWorker.controller) {
+				return;		
+		}
+		if (reg.waiting) {
+				// update is ready		
+				return;
+		}
+		// track progress
+		if (reg.installing) {
+				reg.installing.addEventListener("statechange", () => {
+						if (reg.installing.state === "installed") {
+								// update is ready		
+						}	
+				});
+		}
+		// listen for new installing workers
+		reg.addEventListener("updatefound", () => {
+				reg.installing.addEventListener("statechange", () => {
+						if (reg.installing.state === "installed") {
+								// update is ready		
+						}	
+				});
+		});
+
+  });
+
+  if (update_is_ready) {
+		worker.postMessage({action: "skipWaiting"});
+  }
+
+  navigator.serviceWorker.addEventListener("controllerchange", (event) => {
+		window.location.reload();	
+  });
+
+</script>
+*/
+
+
+
 
 
 // CHAPTER 21 (cache naming)
